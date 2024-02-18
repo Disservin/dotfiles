@@ -1,0 +1,29 @@
+{{ if eq .chezmoi.os "windows" -}}
+:: -*-mode:bat-*- vim:ft=bat
+
+:: ~/.local/share/chezmoi/run_alacritty.bat
+:: ============================================================================
+::
+:: This batch file copies the configuration file to its proper destination on
+:: Windows. Chezmoi will skip this script on other operating systems.
+:: See https://www.chezmoi.io/docs/how-to/
+::
+:: {{- /* This file supports Go's text/template language. */}}
+
+@echo off
+set SRCFILE=%USERPROFILE%\.config\alacritty\alacritty.toml
+set DESTDIR=%APPDATA%\alacritty
+set DESTFILE=%APPDATA%\alacritty\alacritty.toml
+
+:: Ensure the destination directory exists.
+IF NOT EXIST "%DESTDIR%" mkdir "%DESTDIR%"
+
+:: Skip if configuration files are identical.
+fc /b "%SRCFILE%" "%DESTFILE%" > nul
+IF %errorlevel% == 0 exit /b 0
+
+:: Copy source file to destination.
+echo D|xcopy /S /Q /Y /F "%SRCFILE%" "%DESTFILE%"
+
+{{- end }}
+
