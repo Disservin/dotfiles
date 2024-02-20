@@ -8,6 +8,8 @@ opacity = 0.95
 x = 25
 y = 20
 
+[font]
+size = 14
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
