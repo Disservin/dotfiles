@@ -4,6 +4,12 @@ live_config_reload = true
 dynamic_padding = false
 opacity = 0.95
 
+[shell]
+program = "cmd /k"
+
+[env]
+TERM = "xterm-256color"
+
 [window.padding]
 x = 25
 y = 20
