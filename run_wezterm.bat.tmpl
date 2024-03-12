@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "windows" -}}
+:: -*-mode:bat-*- vim:ft=bat
+
+@echo off
+set SRCFILE=%USERPROFILE%\.config\wezterm\wezterm.lua
+set DESTFILE=%USERPROFILE%\.wezterm.lua
+
+copy "%SRCFILE%" "%DESTFILE%" >nul 2>&1
+
+{{- end }}
+

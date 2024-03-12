@@ -45,7 +45,7 @@ config.default_cursor_style = "SteadyBar"
 config.font = wezterm.font({ family = "JetBrainsMono Nerd Font", scale = 1.0 })
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.95
 config.window_decorations = "RESIZE" -- doesnt work on ubuntu 23
 config.window_close_confirmation = "AlwaysPrompt"
 config.default_workspace = "main"
