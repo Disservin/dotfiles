@@ -117,4 +117,4 @@ esac
 # pnpm end
 
 export LLVM_CONFIG_BINARY=llvm-config-18
-export PATH="$PATH:/usr/local/go/bin"
+export PATH="$HOME/go/bin:$PATH"
