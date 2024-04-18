@@ -3,12 +3,15 @@ return {
   event = "VeryLazy",
   opts = {
     window = {
-      width = 100,
+      width = 150,
     },
     plugins = {
       options = {
         laststatus = 3,
       },
+      twilight = {
+        enabled = false
+      }
     },
   },
 }
