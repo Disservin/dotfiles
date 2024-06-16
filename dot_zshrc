@@ -126,7 +126,6 @@ if [ -f "/home/$(whoami)/google-cloud-sdk/path.zsh.inc" ]; then . "/home/$(whoam
 if [ -f "/home/$(whoami)/google-cloud-sdk/completion.zsh.inc" ]; then . "/home/$(whoami)/google-cloud-sdk/completion.zsh.inc"; fi
 
 sfmerge() {
-    git switch master && git fetch upstream master && git reset --hard upstream/master && \
     git fetch upstream pull/$1/head:pr-$1 && git switch pr-$1 && git rebase master && git switch master && \
     git merge --ff-only pr-$1 && \
     echo -e "\n\n\033[31mDon't forget to squash and amend!\033[0m"
