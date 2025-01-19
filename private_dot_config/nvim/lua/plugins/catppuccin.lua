@@ -32,7 +32,7 @@ return {
       notify = true,
       neotree = true,
       semantic_tokens = true,
-      telescope = true,
+    --   telescope = true,
       treesitter = true,
       which_key = true,
     },

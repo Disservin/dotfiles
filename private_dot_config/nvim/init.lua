@@ -33,20 +33,22 @@ vim.cmd("autocmd VimEnter * lua SetRandomLineNrColor()")
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#6e738d", bold = false })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#6e738d", bold = false })
 
-require("telescope").setup({
-  defaults = {
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-      "--hidden",
-    },
-  },
-})
+vim.g.lazyvim_picker = "telescope"
+
+-- require("telescope").setup({
+--   defaults = {
+--     vimgrep_arguments = {
+--       "rg",
+--       "--color=never",
+--       "--no-heading",
+--       "--with-filename",
+--       "--line-number",
+--       "--column",
+--       "--smart-case",
+--       "--hidden",
+--     },
+--   },
+-- })
 
 vim.g.php_htmlInStrings = 1
 
