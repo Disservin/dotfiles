@@ -1,43 +1,10 @@
--- Color scheme configuration for LazyVim
 return {
-  {
-    "ellisonleao/gruvbox.nvim",
-    lazy = true,
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = true,
-    config = function()
-      require('kanagawa').setup({
-        compile = false,             -- enable compiling the colorscheme
-        undercurl = true,            -- enable undercurls
-        commentStyle = { italic = true },
-        functionStyle = {},
-        keywordStyle = { italic = true },
-        statementStyle = { bold = true },
-        typeStyle = {},
-        transparent = false,         -- do not set background color
-        dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
-        terminalColors = true,       -- define vim.g.terminal_color_{0,17}
-        colors = {                   -- add/modify theme and palette colors
-          palette = {},
-          theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-        },
-        overrides = function(colors) -- add/modify highlights
-          return {}
-        end,
-        theme = "wave",              -- Load "wave" theme when 'background' option is not set
-        background = {               -- map the value of 'background' option to a theme
-          dark = "wave",            -- try "dragon" !
-          light = "lotus"
-        },
-      })
-    end,
-  },
+  -- catppuccin ships with LazyVim; just make it the default
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "kanagawa",
-    },
+    opts = { colorscheme = "catppuccin" },
   },
+  -- extra schemes, available via <leader>uC
+  { "rebelot/kanagawa.nvim", lazy = true },
+  { "ellisonleao/gruvbox.nvim", lazy = true },
 }
